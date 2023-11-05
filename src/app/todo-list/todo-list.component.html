@@ -1,0 +1,18 @@
+<div class="grid grid-cols-5 p-10">
+  <div
+    class="space-y-2 m-10 p-2 border border-black rounded-lg bg-slate-400 flex flex-col"
+    *ngFor="let todo of todos; let i = index"
+  >
+    <p>user: {{ todo.userId }}</p>
+    <h3>{{ todo.title }}</h3>
+
+    <span> {{ todo.completed }} </span>
+
+    <a
+      (click)="preventDefault($event)"
+      href="todos/{{ todo.id }}"
+      class="border border-black p-1 bg-gray-300 rounded-lg"
+      >details</a
+    >
+  </div>
+</div>
