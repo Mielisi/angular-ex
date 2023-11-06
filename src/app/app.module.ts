@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { TodoListComponent } from "./todo-list/todo-list.component";
 import { HeaderComponent } from "./header/header.component";
 import { TodoDetailsComponent } from './todo-details/todo-details.component';
+import { EditTodoComponent } from './edit-todo/edit-todo.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { TodoDetailsComponent } from './todo-details/todo-details.component';
     TodoListComponent,
     HeaderComponent,
     TodoDetailsComponent,
+    EditTodoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

@@ -6,11 +6,9 @@ import { Todo } from "src/types/todo";
   templateUrl: "./todo-list.component.html",
 })
 export class TodoListComponent {
-  todos: Todo[] | undefined;
+  protected todos: Todo[] | undefined;
 
-  constructor() {
-    this.todos = undefined;
-  }
+  constructor() {}
 
   async ngOnInit() {
     this.todos = await this.fetchTodos();
@@ -25,8 +23,5 @@ export class TodoListComponent {
     } catch (e) {
       return e;
     }
-  }
-  protected preventDefault(event: Event) {
-    event.preventDefault();
   }
 }

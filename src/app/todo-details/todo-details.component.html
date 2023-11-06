@@ -1,1 +1,25 @@
-<p>todo-details works!</p>
+<div class="text-3xl w-full flex flex-col items-center m-10">
+  <p>loading: {{ isLoading }}</p>
+  <div class="space-y-5">
+    <p>User: {{ singleTodo?.userId }}</p>
+    <h3>Title: {{ singleTodo?.title }}</h3>
+
+    <p>Completed: {{ singleTodo?.completed }}</p>
+    <div class="flex justify-between">
+      <button
+        class="p-3 border border-black rounded-lg hover:bg-gray-200 transition-all duration-400"
+        (click)="DeleteTodo()"
+      >
+        Delete todo
+      </button>
+      <a
+        routerLink="/edit/{{ singleTodo?.id }}"
+        routerLinkActive="active"
+        class="p-3 border border-black rounded-lg hover:bg-gray-200 transition-all duration-400 cursor-pointer"
+        >Edit todo</a
+      >
+    </div>
+
+    <p>Deleted: {{ isDeleted }}</p>
+  </div>
+</div>

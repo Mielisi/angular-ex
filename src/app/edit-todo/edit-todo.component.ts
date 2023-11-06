@@ -1,22 +1,20 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute, ParamMap } from "@angular/router";
-import { switchMap } from "rxjs/operators";
-import { Observable } from "rxjs";
 import { Todo } from "src/types/todo";
 
 @Component({
-  selector: "app-todo-details",
-  templateUrl: "./todo-details.component.html",
+  selector: "app-edit-todo",
+  templateUrl: "./edit-todo.component.html",
 })
-export class TodoDetailsComponent {
+export class EditTodoComponent {
   protected singleTodo: Todo | undefined;
   protected todoId: string | null | undefined;
   protected isLoading: boolean;
-  protected isDeleted: boolean;
-  
+  protected isEdited: boolean
+
   constructor(private route: ActivatedRoute) {
     this.isLoading = false;
-    this.isDeleted = false;
+    this.isEdited = false
   }
 
   ngOnInit() {
@@ -46,22 +44,7 @@ export class TodoDetailsComponent {
     }
   }
 
-  protected async DeleteTodo() {
-    this.isLoading = true;
-    try {
-      const response = await fetch(
-        `https://jsonplaceholder.typicode.com/todos/${this.todoId}`,
-        {
-          method: "DELETE",
-        }
-      );
-      if (!response.ok) throw new Error("Failed to delete the todo");
-      this.isDeleted = true;
-
-      return (this.isLoading = false);
-    } catch (e) {
-      this.isLoading = false;
-      return e;
-    }
+  protected async applyEdit(){
+    
   }
 }

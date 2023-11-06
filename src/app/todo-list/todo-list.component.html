@@ -7,12 +7,13 @@
     <h3>{{ todo.title }}</h3>
 
     <span> {{ todo.completed }} </span>
-
-    <a
-      (click)="preventDefault($event)"
-      href="todos/{{ todo.id }}"
-      class="border border-black p-1 bg-gray-300 rounded-lg"
-      >details</a
-    >
+    <div class="w-full flex items-center justify-center">
+      <a
+        routerLink="todo/{{ todo.id }}"
+        routerLinkActive="active"
+        class="border border-black p-3 text-xl w-fit rounded-lg hover:bg-gray-200 transition-all duration-400s"
+        >details</a
+      >
+    </div>
   </div>
 </div>
