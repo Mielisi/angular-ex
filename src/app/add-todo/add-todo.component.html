@@ -1,0 +1,42 @@
+<div
+  class="w-full flex items-center justify-center text-3xl mt-20 flex-col space-y-16"
+>
+  <h4 class="font-bold text-4xl uppercase">Add a todo</h4>
+  <form class="space-y-8" (submit)="onSubmit($event)">
+    <div class="space-x-5">
+      <label for="user">User:</label>
+      <input
+        class="outline-none border border-black rounded-lg"
+        type="number"
+        id="user"
+      />
+    </div>
+    <div class="space-x-5">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        class="outline-none border border-black rounded-lg"
+        id="title"
+      />
+    </div>
+
+    <div class="space-x-5">
+      <label for="compleated">Completed: </label>
+      <select
+        name="completed"
+        id="completed"
+        class="bg-transparent p-2 border border-black rounded-lg cursor-pointer hover:bg-gray-200 transition-all duration-400"
+      >
+        <option value="false">False</option>
+        <option value="true">True</option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      class="p-3 border border-black rounded-lg w-full hover:bg-gray-200 transition-all duration-400"
+    >
+      Add todo
+    </button>
+  </form>
+</div>
