@@ -1,15 +1,8 @@
 <div class="text-3xl w-full flex flex-col items-center m-10 space-y-10">
-
   <p>loading: {{ isLoading }}</p>
-  <form class="space-y-5">
-    <div class="space-x-3">
-      <label for="userId">User: </label>
-      <input
-        value="{{ singleTodo?.userId }}"
-        id="userId"
-        class="border border-black rounded-lg w-80 p-2 outline-none"
-      />
-    </div>
+  <form class="space-y-5" (submit)="onSubmit($event)">
+    <label>User: {{ singleTodo?.userId }}</label>
+
     <div class="space-x-3">
       <label for="title">Title: </label>
       <input
@@ -32,11 +25,20 @@
           True
         </option>
       </select>
+
     </div>
+    <label for="method"> Method: </label>
+    <select
+      name="method"
+      id="method"
+      class="bg-transparent p-2 border border-black rounded-lg cursor-pointer hover:bg-gray-200 transition-all duration-400"
+    >
+      <option value="PATCH">Patch</option>
+      <option value="PUT">Put</option>
+    </select>
     <div class="flex justify-between">
       <button
         class="p-3 border border-black rounded-lg w-full hover:bg-gray-200 transition-all duration-400"
-        (click)="applyEdit()"
         type="submit"
       >
         apply
